@@ -1,0 +1,60 @@
+.ant-layout {
+  background: none;
+}
+
+.sider {
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  margin-top: 64px;
+  background-color: #fafafa;
+  box-shadow: inset -1px 0 0 #e5e5e5;
+}
+
+.logo {
+  width: 100px;
+  img {
+    width: inherit;
+  }
+}
+
+.cart-row {
+  height: 75%;
+  overflow: hidden;
+  overflow-y: auto;
+  align-content: start;
+
+  .cart-col {
+    padding: 4px 8px;
+  }
+}
+
+.card-cart {
+  .ant-card-body {
+    padding: 16px;
+    .ant-col {
+      align-self: center;
+    }
+  }
+}
+
+.cart-sum-row {
+  box-shadow: inset -1px 0 0 #e5e5e5;
+  height: 25%;
+
+  .cart-sum-col {
+    padding: 4px 8px;
+    background: white;
+    width: 59%;
+    box-shadow: inset -2px 2px 0px #e5e5e5;
+    padding: 4px 8px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.ant-layout-header {
+  z-index: 5;
+}
