@@ -3,7 +3,7 @@ import { PlusOutlined, MinusOutlined, ExclamationCircleOutlined } from '@ant-des
 const { confirm } = Modal
 
 const ProductOrder = ({ cart, index, setCarts }) => {
-  const { name, img, number } = cart
+  const { id, name, img, number,amount } = cart
   const handelNumberCart = (num) => {
     if (number === 1 && num === -1)
       showConfirm()
@@ -21,12 +21,18 @@ const ProductOrder = ({ cart, index, setCarts }) => {
     confirm({
       title: `ยืนยันลบรายการ ${name}`,
       icon: <ExclamationCircleOutlined />,
+      okText: 'ยืนยัน',
+      cancelText: 'ยกเลิก',
       onOk() {
-        console.log('OK')
-      },
-      onCancel() {
-        console.log('Cancel')
-      },
+        setCarts((pre) => {
+          let cart = pre.filter((cart) => cart.id !== id)
+          if (cart.length > 0)
+            return [...cart]
+          else {
+            return []
+          }
+        })
+      }
     })
   }
 

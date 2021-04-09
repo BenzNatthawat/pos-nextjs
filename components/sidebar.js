@@ -16,10 +16,10 @@ const Sidebar = ({ carts, setCarts }) => {
       <Row className='cart-sum-row'>
         <Col className='cart-sum-col' span={24}>
           <Row>
-            จำนวน 10
+            จำนวน {carts.reduce(((accumulator, currentValue) => accumulator + currentValue.number), 0)}
           </Row>
           <Row>
-            ราคา 1000 บาท
+            จำนวน {carts.reduce(((accumulator, currentValue) => accumulator + currentValue.amount), 0)}
           </Row>
           <Row gutter={[16]}>
             <Col span={12}>

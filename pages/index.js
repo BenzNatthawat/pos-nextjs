@@ -10,7 +10,7 @@ const Home = ({ products, carts }) => {
         <Row gutter={[16, 16]}>
           {products.map((product, key) => (
             <Col key={key} span={6}>
-              <ProductOrder  {...product} carts={carts} />
+              <ProductOrder  product={product} cart={carts} />
             </Col>
           ))}
         </Row>

@@ -3,7 +3,8 @@ import { Card, Modal, Row, Col, Button } from 'antd'
 import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 const { Meta } = Card
 
-const ProductOrder = ({ name, img }) => {
+const ProductOrder = ({ product, cart }) => {
+  const { id, name, img } = product
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [heightImg, setHeightImg] = useState(100)
   const [number, setNumber] = useState(1)
@@ -18,11 +19,25 @@ const ProductOrder = ({ name, img }) => {
   }
 
   const handleOk = () => {
-    setIsModalVisible(false);
+    const { carts, setCarts } = cart
+    const CartIndex = carts.findIndex(({ id: cartId }) => cartId === id)
+    if (CartIndex === -1) {
+      carts.push({
+        ...product,
+        number: number
+      })
+    }
+    else {
+      carts[CartIndex].number = carts[CartIndex].number + number
+    }
+    setCarts([...carts])
+    setIsModalVisible(false)
+    setNumber(1)
   }
 
   const handleCancel = () => {
-    setIsModalVisible(false);
+    setIsModalVisible(false)
+    setNumber(1)
   }
 
   const handelNumber = (num) => {

@@ -1,41 +1,77 @@
 export default (req, res) => {
   res.status(200).json({
     products: [{
+      id: '3346lkm4lk25n346ln',
       name: 'product01',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 100,
+      amountDiscount: 50
     }, {
+      id: '3346wergwertk25n346ln',
       name: 'product02',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 24,
+      amountDiscount: 50
     }, {
+      id: '3346l5twgwerg5n346ln',
       name: 'product03',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 34,
+      amountDiscount: 50
     }, {
+      id: '3346lkm4le65yeyln',
       name: 'product04',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 43,
+      amountDiscount: 50
     }, {
+      id: '3346lkm4l6y65hln',
       name: 'product05',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 34,
+      amountDiscount: 50
     }, {
+      id: '3346lkm4lk25n346ln',
       name: 'product06',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 8,
+      amountDiscount: 50
     }, {
+      id: '33rt5y6lk25n346ln',
       name: 'product07',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 23,
+      amountDiscount: 50
     }, {
+      id: '3346lkm4lk25nrtwertln',
       name: 'product08',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 43,
+      amountDiscount: 50
     }, {
+      id: '3346ertretk25n346ln',
       name: 'product09',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 78,
+      amountDiscount: 50
     }, {
+      id: '334wertlk25n346ln',
       name: 'product10',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 45,
+      amountDiscount: 50
     }, {
+      id: '3346lkm4rtewrt5n346ln',
       name: 'product11',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 10,
+      amountDiscount: 50
     }, {
+      id: '334hyher25n346ln',
       name: 'product12',
       img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
+      amount: 30,
+      amountDiscount: 50
     }]
   })
 }
