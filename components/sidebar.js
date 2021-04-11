@@ -1,12 +1,17 @@
-import { Layout, Row, Col, Button } from 'antd'
+import { Layout, Row, Col, Button, Typography } from 'antd'
 import ProductCart from '../components/productcart'
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons'
 const { Sider } = Layout
+const { Text } = Typography;
 
-const Sidebar = ({ carts, setCarts }) => {
+
+const Sidebar = ({ carts, setCarts, name }) => {
   return <>
     <Sider width={350} className='sider' >
       <Row className='cart-row'>
+        <Col className='cart-col table-name' span={24}>
+          <Text code>{name}</Text>
+        </Col>
         {carts.map((cart, key) => (
           <Col key={key} className='cart-col' span={24}>
             <ProductCart index={key} cart={cart} setCarts={setCarts} />
@@ -19,7 +24,7 @@ const Sidebar = ({ carts, setCarts }) => {
             จำนวน {carts.reduce(((accumulator, currentValue) => accumulator + currentValue.number), 0)}
           </Row>
           <Row>
-            จำนวน {carts.reduce(((accumulator, currentValue) => accumulator + currentValue.amount), 0)}
+            ราคา {carts.reduce(((accumulator, currentValue) => accumulator + (currentValue.amount * currentValue.number)), 0)}
           </Row>
           <Row gutter={[16]}>
             <Col span={12}>

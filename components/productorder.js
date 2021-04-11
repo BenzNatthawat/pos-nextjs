@@ -4,7 +4,7 @@ import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 const { Meta } = Card
 
 const ProductOrder = ({ product, cart }) => {
-  const { id, name, img } = product
+  const { id, name, img, amount } = product
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [heightImg, setHeightImg] = useState(100)
   const [number, setNumber] = useState(1)
@@ -20,7 +20,14 @@ const ProductOrder = ({ product, cart }) => {
 
   const handleOk = () => {
     const { carts, setCarts } = cart
-    const CartIndex = carts.findIndex(({ id: cartId }) => cartId === id)
+    let CartIndex
+    console.log(cart)
+    console.log(carts)
+    if (carts.length > 0) {
+      CartIndex = carts.findIndex(({ id: cartId }) => cartId === id)
+    } else {
+      CartIndex = -1
+    }
     if (CartIndex === -1) {
       carts.push({
         ...product,
@@ -55,7 +62,7 @@ const ProductOrder = ({ product, cart }) => {
         cover={<img height={heightImg} src={img} alt={name} />}
         onClick={showModal}
       >
-        <Meta title={name} />
+        <Meta title={<div className='product'><div>{name}</div> <div>{amount}</div></div>} />
       </Card>
 
       <Modal okText='ตกลง' cancelText='ยกเลิก' visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>

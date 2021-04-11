@@ -26,6 +26,15 @@
 
   .cart-col {
     padding: 4px 8px;
+
+    &.table-name {
+      text-align: center;
+
+      .ant-typography {
+        z-index: 5px;
+        font-size: 1.4em;
+      }
+    }
   }
 }
 
@@ -57,4 +66,9 @@
 
 .ant-layout-header {
   z-index: 5;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
 }

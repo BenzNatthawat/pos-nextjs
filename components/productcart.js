@@ -3,7 +3,7 @@ import { PlusOutlined, MinusOutlined, ExclamationCircleOutlined } from '@ant-des
 const { confirm } = Modal
 
 const ProductOrder = ({ cart, index, setCarts }) => {
-  const { id, name, img, number,amount } = cart
+  const { id, name, img, number, amount } = cart
   const handelNumberCart = (num) => {
     if (number === 1 && num === -1)
       showConfirm()
@@ -44,6 +44,9 @@ const ProductOrder = ({ cart, index, setCarts }) => {
         </Col>
         <Col>
           {name}
+        </Col>
+        <Col>
+          {amount}
         </Col>
         <Col>
           <Button onClick={() => handelNumberCart(-1)} shape="round" style={{ background: "#f5222d" }}><MinusOutlined /></Button>
